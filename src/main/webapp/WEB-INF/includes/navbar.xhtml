@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:form id="navBar">
+        
+            <div class="card">
+                <p:tabMenu activeIndex="#{param.i}" class="yellow darken-1">
+                    <p:menuitem value="Home" outcome="/index" icon="pi pi-fw pi-home">
+                        <f:param name="i" value="0"/>
+                    </p:menuitem>
+                    <p:menuitem value="All Cities" outcome="/city/List" icon="pi pi-fw pi-calendar">
+                        <f:param name="i" value="1"/>
+                    </p:menuitem>
+                    <p:menuitem value="Create" outcome="/city/Edit" icon="pi pi-fw pi-pencil">
+                        <f:param name="i" value="2"/>
+                    </p:menuitem>
+                </p:tabMenu>
+            </div>
+
+        
+
+        <!--Mobile navbar-->
+        <ul class="sidenav light-blue" id="nav-mobile">
+            <li><a href="http://materializecss.com/">Materialize CSS</a></li>
+            <li>
+                <p:graphicImage value="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"/>
+            </li>
+        </ul>
+    </h:form>
+
+    <!--Script to call mobile navbar-->
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+
+</ui:composition>
