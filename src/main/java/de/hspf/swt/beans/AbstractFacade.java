@@ -1,7 +1,9 @@
 package de.hspf.swt.beans;
 
+import java.util.HashMap;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *
@@ -56,4 +58,9 @@ public abstract class AbstractFacade<T> {
         return ((Long) q.getSingleResult()).intValue();
     }
     
+    public List findByNamedQuery(String queryName, HashMap<String, String> parameters){
+        Query query = getEntityManager().createNamedQuery(queryName);
+        parameters.forEach((K,V) -> query.setParameter(K, V));
+        return query.getResultList();
+    }
 }

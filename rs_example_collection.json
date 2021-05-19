@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "6a8edc53-584c-4681-a76f-4037a485f15f",
+		"name": "mondial-rs-examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "City by name (QueryParam)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/resources/city/name/?name=Pforzheim",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"resources",
+						"city",
+						"name",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Pforzheim"
+						}
+					]
+				},
+				"description": "This request calls an rest endpoint with a city name as query paramater (Pforzheim as default)"
+			},
+			"response": []
+		},
+		{
+			"name": "City by name (PathParam)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/resources/city/name/Karlsruhe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"resources",
+						"city",
+						"name",
+						"Karlsruhe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/resources/city/cities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"resources",
+						"city",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
